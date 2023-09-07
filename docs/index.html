@@ -38,6 +38,13 @@
             </p>
         </h2>
 
+    <img src = "https://th.bing.com/th/id/OIP.GffVEU1OSJARYRD-_kjzTQHaE6?pid=ImgDet&rs=1"
+             class = "center" style ="width:40%">
+            <text style="font-size:16px;color:grey;text-align:center;"
+                  class="center">
+                Fuente: https://www.i4agri.org/soil-and-water
+            </text>
+
     <ul style="list-style-type: none;
               margin: 0;
               padding: 0;
@@ -187,12 +194,7 @@
     <br>
 
 
-            <img src = "https://th.bing.com/th/id/OIP.GffVEU1OSJARYRD-_kjzTQHaE6?pid=ImgDet&rs=1"
-             class = "center" style ="width:40%">
-            <text style="font-size:16px;color:grey;text-align:center;"
-                  class="center">
-                Fuente: https://www.i4agri.org/soil-and-water
-            </text>
+
 
             <section>
                 <h3 id="prefacio">
@@ -514,11 +516,17 @@
                 se muestra en la Figura 11.
                 Con ayuda de la aplicación <b style="color:#FD628C">GPS essentials</b>, recorreremos cada uno de los vértices
                 del terreno. Al llegar a cada uno de los vértices esperaremos dos minutos
-                antes de registrar en nuestra libreta o como waypoints las coordenadas;
+                antes de registrar en nuestra libreta las coordenadas;
                 es muy importante esperar al menos dos minutos con la finalidad de darle
-                oportunidad al GPS de corregir la posición y tener así un dato más preciso.
+                oportunidad al GPS de corregir la posición y tener una mejor precisión (Accuracy) para obtener datos más confiables.
                 Repetiremos el procedimiento en cada uno de los
-                vértices del terreno.
+                vértices del terreno. Las coordenadas obtenidas en cada vértice son las siguientes:
+                <br>
+                <br>
+                A(778104, 2461333)<br>
+                B(778251, 2461318)<br>
+                C(778097, 2461194)<br>
+                D(778244, 2461184)
                 <br>
                 <br>
                 Con nuestro croquis a la mano y con la lista de coordenadas utilizaremos el
@@ -532,17 +540,96 @@
                 </figure>
                 <img src="areamath.png"
                 class="center" style="width:40%">
-                    <figcaption style="font-family:courier;font-size:18px;text-align:center;" >Fig 11.
+                    <figcaption style="font-family:courier;font-size:18px;text-align:center;" >Fig 15.
                         Croquis del terreno de la escuela con vértices A, B, C, D y  fórmula de área por
                         determinante en la que vemos la matriz con las
                     coordenadas de cada vértice.</figcaption>
                 </figure>
                 <br>
                 <br>
+                Para construir la matriz de la fórmula, en esta ocasió se ha decicido comenzar
+                por el punto B, y posteriormente se debe continuar con el resto de puntos
+                en el sentido contrario a las manecillas del reloj <b style="color:#FD628C">considerando que el croquis
+                fue trazado con orientación norte</b>. Una vez agregadas a la matriz las coordenadas
+                de cada punto, se deben repetir las del primero.
+                <br>
+                <br>
+                <figure>
+                <img src="vertex_order.png"
+                class="center" style="width:70%">
+                    <figcaption style="font-family:courier;font-size:18px;text-align:center;" >Fig 16.
+                        La matriz se construye iniciando con las coordenadas de un punto y
+                        posteriormente agregando los datos del resto de puntos en el sentido
+                        contrario a las manecillas del reloj.</figcaption>
+                </figure>
+                <br>
+                <br>
+                Una vez ordenada la matriz, haremos las multiplicaciones correspondientes
+                pero tomando en cuenta solo la parte numérica reducida como se muestra en la Figura 13.
+                Las primeras multiplicaciones a sumarse serán las indicadas con las flechas descendientes
+                y a ese resultado se le restará la suma de las multiplicaciones indicadas con
+                las flechas ascendentes.
+                <br>
+                <br>
+                <figure>
+                <img src="vertex_matrix.png"
+                class="center" style="width:70%">
+                    <figcaption style="font-family:courier;font-size:18px;text-align:center;" >Fig 17.
+                        Para las operaciones solo se usarán las cifras marcadas en color verde.</figcaption>
+                </figure>
+                <br>
+                <br>
+                Las operaciones en la matriz de coordenadas son las siguientes:
+                <br>
+                <br>
+                <p style="background-color:black;padding:5px">= <text style="font-size:16px;color:orange">&emsp;[(251 x 333) + (104 x 194) + (97 x 184) + (244 x 318)]</text> -
+                    <text style="font-size:16px;color:blue">[(251 x 184) + (244 x 194) + (97 x 333) + (104 x 318)]</text>
+                <br>
+                <br>
+                    = <text style="font-size:16px;color:orange">&emsp;(83,583 + 20,176 + 17,848 + 77,592)</text> -
+                    <text style="font-size:16px;color:blue">(46,184 + 47,336 + 32,301 + 33,072)</text>
+                    <br>
+                    <br>
+                    = <text style="font-size:16px;color:orange">&emsp;199,199</text> -
+                    <text style="font-size:16px;color:blue">158,893</text>
+                    <br>
+                    <br>
+                    = <text style="font-size:16px;color:white;font-weight:bold">40,306</text>
+                    <br>
+                    <br>
+                    <text style="font-size:16px;color:white;font-weight:italic">Este último resultado se
+                        divide entre dos para así obtener nuestro resultado final.
+                    <br>
+                    <br>
+                    40,306 / 2 &emsp;=
+                    </text>  <text style="font-size:16px;color:yellow;font-weight:italic">&emsp;20,153 m<sup>2</sup></text>.
+                    <br>
+                    <br>
+                    <text style="font-size:16px;color:white;font-weight:italic">Para convertir nuestro resultado a hectáreas simplemente dividimos entre 10,000:
+                        <br>
+                        <br>
+                        20,153 / 10,000 = 2.01 hectáreas.</text>
+                    </text>
+                </p>
+                <br>
+                <br>
                 En muchas ocasiones será de interés calcular la distancia que hay entre dos sitios.
                 En esos casos utilizaremos las coordenadas de los dos puntos de interés y la
                 fórmula de <b style="color:#FD628C">distancia entre dos puntos</b> vista en clase con
-                tu profesor.
+                tu profesor y que se muestra a continuación:
+                <br>
+                <br>
+                <figure>
+                <img src="distancia.png"
+                class="center" style="width:70%">
+                    <figcaption style="font-family:courier;font-size:18px;text-align:center;" >Fig 18.
+                        Fórmula para calcular la distancia entre dos puntos A y B.</figcaption>
+                </figure>
+                <br>
+                <br>
+                Ahora te invito a que calcules por tu cuenta la distancia que hay entre los puntos C y D
+                del croquis de la Figura 16 previamente visto. Utiliza las coordenadas que se mostraron
+                en el ejemplo y no olvides trabajar con cifras reducidas para facilitar las operaciones.
 
                 <h3 id="2 cap">
                     <br>
@@ -606,10 +693,31 @@
                 c) tramo L-M: 3 sitios<br>
                 <br>
                 <br>
+                Para distribuir los sitios de muestreo en una distancia dada utilizaremos la siguiente
+                fórmula:<br>
+                <br>
+                d<sub style="font-size:11px">p-q</sub> = D / (n + 1)
+                <br>
+                <br>
+                Donde:<br>
+                d<sub style="font-size:11px">p-q</sub>: distancia entre muestras del segmento p-q.<br>
+                D: longitud del segmento p-q.<br>
+                n: número de muestras asignadas al segmento p-q.
+                <br>
+                <br>
                 Digamos que el segmento J-K mide 100 metros, en ese segmento tenemos que distribuir tres sitios,
-                entonces dividimos 100/3 = 33.33, redondeamos a 30 y tenemos entonces que los sitios se marcarán
-                cada 30 metros a lo largo del segmento. Si el segmento K-L midiera también 100 metros, entonces
-                los 4 sitios de muestreo se marcarían cada 25 m a lo largo del segmento.
+                utilizando la fórmula tenemos que:
+                <br>
+                <br>
+                d<sub style="font-size:11px">j-k</sub> = 100 / (3 + 1)<br>
+                d<sub style="font-size:11px">j-k</sub> = 100 / 4<br>
+                d<sub style="font-size:11px">j-k</sub> = 25
+                <br>
+                <br>
+                Tenemos entonces que los sitios de muestreo a lo largo del segmento J-K se marcarán
+                cada 25 metros. Si el segmento K-L midiera también 100 metros, entonces
+                los 4 sitios de muestreo se marcarían cada 20 m a lo largo del segmento
+                 (Figura 13), comprueba este último resultado utilizando la fórmula.
                 <br>
                 <br>
                 <figure>
@@ -618,6 +726,9 @@
                     <figcaption style="font-family:courier;font-size:18px;text-align:center;" >Fig 13. Distribución de los 10 sitios de muestreo
                         a lo largo de los tres segmentos de zig-zag.</figcaption>
                 </figure>
+                <br>
+                <br>
+
 
 
                 <h3 id="2 sub 2">
