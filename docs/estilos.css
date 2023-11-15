@@ -64,6 +64,21 @@ h5 {
   width: 75%;
 }
 
+
+.center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+.center3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+
 img {
 
   max-width: 80%;
@@ -75,7 +90,7 @@ img {
 
 }
 
-table, th, td {
+.table, th, td {
   border:1px solid white;
   font-family: courier;
   font-size: 21px;
@@ -87,6 +102,19 @@ table, th, td {
 
 }
 
+
+.table1, td1, th1, tr1 {
+    border:1px solid white;
+  font-family: courier;
+  font-size: 21px;
+  border-collapse: collapse;
+  text-align: left;
+  padding: 5px;
+  white-space:now-wrap;
+  table-layout: fixed;
+    #word-wrap: break-word;
+  word-break:keep-all;
+}
 
 
 
@@ -104,7 +132,7 @@ table, th, td {
 .toc_title {
     font-weight: 700;
     text-align: left;
-    color:#424242;
+    color:white;
     text-indent: 40px;
 }
 
